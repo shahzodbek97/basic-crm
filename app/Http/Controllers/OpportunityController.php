@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Contact;
+use App\Models\Opportunity;
 use Illuminate\Http\Request;
 
-class ContactController extends Controller
+class OpportunityController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class ContactController extends Controller
      */
     public function index()
     {
-        return response()->json(Contact::all());
+        return response()->json(Opportunity::All());
     }
 
     /**
@@ -35,12 +35,13 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        $contact = new Contact;
-        $contact->account_id = '3';
-        $contact->contact_address = 'Parkent';
-        $contact->contact_contact_details = 'Lesxoz';
-        $contact->save();
-        return response()->json($contact);
+        $opportunity = new Opportunity;
+        $opportunity->account_id = '4';
+        $opportunity->opportunity_description = 'wdwadasdsa';
+        $opportunity->opportunity_details = 'ewfdgdrgfsfhgfdasdfgrty';
+        $opportunity->opportunity_stage = 'qwertyuiolkjhgfds';
+        $opportunity->save();
+        return response()->json($opportunity);
     }
 
     /**
@@ -62,10 +63,10 @@ class ContactController extends Controller
      */
     public function edit($id)
     {
-        $contact = Contact::find($id);
-        $contact->contact_contact_details = $contact->contact_contact_details . ', Borsiliq';
-        $contact->update();
-        return response()->json($contact);
+        $opportunity = Opportunity::find($id);
+        $opportunity->opportunity_stage = $opportunity->opportunity_stage . ', 234567';
+        $opportunity->update();
+        return response()->json($opportunity);
     }
 
     /**
@@ -88,7 +89,7 @@ class ContactController extends Controller
      */
     public function destroy($id)
     {
-        Contact::where('id', $id)->delete();
-        return response()->json(['success'=>true]);
+        Opportunity::where('id', $id)->delete();
+        return response()->json(["o'chirildi"=>true]);
     }
 }

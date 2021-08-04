@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Contact;
+use App\Models\Kase;
 use Illuminate\Http\Request;
 
-class ContactController extends Controller
+class KaseController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class ContactController extends Controller
      */
     public function index()
     {
-        return response()->json(Contact::all());
+        return response()->json(Kase::All());
     }
 
     /**
@@ -35,12 +35,10 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        $contact = new Contact;
-        $contact->account_id = '3';
-        $contact->contact_address = 'Parkent';
-        $contact->contact_contact_details = 'Lesxoz';
-        $contact->save();
-        return response()->json($contact);
+        $kase = new Kase;
+        $kase->contact_id = '22';
+        $kase->save();
+        return response()->json($kase);
     }
 
     /**
@@ -62,10 +60,10 @@ class ContactController extends Controller
      */
     public function edit($id)
     {
-        $contact = Contact::find($id);
-        $contact->contact_contact_details = $contact->contact_contact_details . ', Borsiliq';
-        $contact->update();
-        return response()->json($contact);
+        $kase = Kase::find($id);
+        $kase->contact_id = $kase->contact_id . '4';
+        $kase->update();
+        return response()->json($kase);
     }
 
     /**
@@ -88,7 +86,7 @@ class ContactController extends Controller
      */
     public function destroy($id)
     {
-        Contact::where('id', $id)->delete();
-        return response()->json(['success'=>true]);
+        Kase::where('id', $id)->delete();
+        return response()->json(["o'chirish"=>true]);
     }
 }

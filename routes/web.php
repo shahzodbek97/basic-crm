@@ -5,6 +5,9 @@ use App\Http\Controllers\LeadController;
 use App\Http\Controllers\CampaignController;
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\ContractController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\OpportunityController;
+use App\Http\Controllers\KaseController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -46,4 +49,20 @@ Route::get('/contract/store', [ContractController::class, 'store']);
 Route::get('/contract/delete/{id}', [ContractController::class, 'destroy']);
 Route::get('/contract/update/{id}', [ContractController::class, 'edit']);
 
+//Contact
+Route::get('/contact/list', [ContactController::class, 'index']);
+Route::get('/contact/store', [ContactController::class, 'store']);
+Route::get('/contact/delete/{id}', [ContactController::class, 'destroy']);
+Route::get('/contact/update/{id}', [ContactController::class, 'edit']);
 
+//Opportunity
+Route::get('/opportunity/list', [OpportunityController::class, 'index']);
+Route::get('/opportunity/store', [OpportunityController::class, 'store']);
+Route::get('/opportunity/delete/{id}', [OpportunityController::class, 'destroy']);
+Route::get('/opportunity/update/{id}', [OpportunityController::class, 'edit']);
+
+//Kase
+Route::get('/kase/list', [KaseController::class, 'index']);
+Route::get('/kase/store', [KaseController::class, 'store']);
+Route::get('/kase/delete/{id}', [KaseController::class, 'destroy']);
+Route::get('/kase/update/{id}', [KaseController::class, 'edit']);
