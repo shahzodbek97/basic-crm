@@ -19,6 +19,7 @@ class CreateAccountsTable extends Migration
             $table->string('account_description');
             $table->integer('account_phone')->unsigned();
             $table->string('biling_address');
+            $table->bi
             $table->timestamps();
         });
     }
